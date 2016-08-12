@@ -39,13 +39,14 @@ class HumiditiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_humidity
-      @humidity = Humidity.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def humidity_params
-      params.require(:humidity).permit(:reading)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_humidity
+    @humidity = Humidity.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def humidity_params
+    params.require(:humidity).permit(:reading)
+  end
 end

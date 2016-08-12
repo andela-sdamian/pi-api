@@ -10,30 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812080909) do
-
-  create_table "humidities", force: :cascade do |t|
-    t.float    "reading"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+ActiveRecord::Schema.define(version: 20_160_812_085_718) do
+  create_table 'humidities', force: :cascade do |t|
+    t.float    'reading'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  create_table "lights", force: :cascade do |t|
-    t.boolean  "on"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'lights', force: :cascade do |t|
+    t.boolean  'on'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string   'reading'
   end
 
-  create_table "motors", force: :cascade do |t|
-    t.boolean  "running",    default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+  create_table 'motors', force: :cascade do |t|
+    t.boolean  'running', default: false
+    t.datetime 'created_at',                 null: false
+    t.datetime 'updated_at',                 null: false
   end
 
-  create_table "temperatures", force: :cascade do |t|
-    t.float    "reading"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'temperatures', force: :cascade do |t|
+    t.float    'reading'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
-
 end

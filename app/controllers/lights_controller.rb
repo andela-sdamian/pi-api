@@ -1,11 +1,9 @@
 class LightsController < ApplicationController
   before_action :set_light, only: [:show, :update]
 
-
   def show
     render json: @light
   end
-
 
   def update
     if @light.update(light_params)
@@ -15,13 +13,13 @@ class LightsController < ApplicationController
     end
   end
 
-
   private
-    def set_light
-      @light = Light.first
-    end
 
-    def light_params
-      params.permit(:on)
-    end
+  def set_light
+    @light = Light.first
+  end
+
+  def light_params
+    params.permit(:reading)
+  end
 end
