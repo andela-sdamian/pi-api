@@ -3,10 +3,9 @@ source 'https://rubygems.org'
 gem 'pg'
 gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
-
+gem 'pry-rails'
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'pry-rails'
   gem 'rspec-rails'
   gem 'sqlite3'
   gem 'database_cleaner'
