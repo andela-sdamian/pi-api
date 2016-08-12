@@ -18,4 +18,14 @@
 #  { reading: 1.0 }
 # ])
 
-Motor.create(running: false)
+#Motor.create(running: false)
+
+Statistic.create([
+   { temperature: 30, humidity: 20, lux: 10, box_id: 1 }, 
+   { temperature: 90, humidity: 20, lux: 10, box_id: 2 }, 
+   { temperature: 20, humidity: 20, lux: 10, box_id: 1 }, 
+   { temperature: 30, humidity: 20, lux: 10, box_id: 4 },
+   { temperature: 80, humidity: 20, lux: 10, box_id: 1 }, 
+   { temperature: 23.1, humidity: 20, lux: 10, box_id: 1 }, 
+   { temperature: 30, humidity: 20, lux: 10, box_id: 1 }
+])
