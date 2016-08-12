@@ -10,7 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160812202656) do
+ActiveRecord::Schema.define(version: 20160812215710) do
+
+  create_table "crops", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "humidities", force: :cascade do |t|
     t.float    "reading"
@@ -29,6 +35,16 @@ ActiveRecord::Schema.define(version: 20160812202656) do
     t.boolean  "running",    default: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.text     "lux"
+    t.text     "temp"
+    t.text     "humidity"
+    t.integer  "crop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crop_id"], name: "index_settings_on_crop_id"
   end
 
   create_table "statistics", force: :cascade do |t|
