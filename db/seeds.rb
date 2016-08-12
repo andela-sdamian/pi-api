@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+Temperature.create([
+  { reading: 3.0 }, 
+  { reading: 2.0 },
+  { reading: 1.0 }  
+])
+
+Humidity.create([
+  { reading: 3.0 }, 
+  { reading: 2.0 },
+  { reading: 1.0 }  
+])
+
+Motor.create({running: false}) 

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get '/light', to: "lights#show" 
-  put '/light', to: "lights#update" 
+  resource :motors, only: :show
+  resources :humidities, only: [:index, :create]
+  resources :temperatures, only: [:index, :create]
+  resources :lights, only: [:index, :create] 
 end
