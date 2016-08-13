@@ -20,6 +20,6 @@ class LightsController < ApplicationController
   end
 
   def light_params
-    params.permit(:reading)
+    params.permit(:on, :reading)
   end
 end

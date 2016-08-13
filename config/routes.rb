@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/motor', to: "motors#index" 
   put '/motor', to: "motors#update"
 
+  post '/readings', to: "pis#create" 
+
   resources :crops, except: [:destroy]
 
   resources :settings, except: [:destroy]

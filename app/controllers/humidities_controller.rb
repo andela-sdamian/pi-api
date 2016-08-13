@@ -47,6 +47,6 @@ class HumiditiesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def humidity_params
-    params.require(:humidity).permit(:reading)
+    params.permit(:reading)
   end
 end
