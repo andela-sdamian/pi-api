@@ -1,7 +1,7 @@
 class LightsController < ApplicationController
-  before_action :set_light, only: [:show, :update]
+  before_action :set_light, only: [:index, :update]
 
-  def show
+  def index
     render json: @light
   end
 
@@ -16,7 +16,7 @@ class LightsController < ApplicationController
   private
 
   def set_light
-    @light = Light.first
+    @light = Light.last
   end
 
   def light_params

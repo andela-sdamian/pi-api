@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
-  resources :crops
-  resources :settings
-  resources :statistics
-  resource :motors, only: [:show, :update]
+  get '/pump', to: "pumps#index" 
+  put '/pump', to: "pumps#update"
+
+  get '/fan', to: "fans#index" 
+  put '/fan', to: "fans#update" 
+
+  get '/heat', to: "heats#index" 
+  put '/heat', to: "heats#update" 
+
+  get '/motor', to: "motors#index" 
+  put '/motor', to: "motors#update"
+
+  resources :crops, except: [:destroy]
+
+  resources :settings, except: [:destroy]
+  
+  resources :statistics, except: [:destroy]
+
   resources :humidities, only: [:index, :create]
+
   resources :temperatures, only: [:index, :create]
+  
   resources :lights, only: [:index, :create]
+
+ 
 end

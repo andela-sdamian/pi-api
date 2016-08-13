@@ -1,11 +1,9 @@
 class MotorsController < ApplicationController
-  before_action :set_motor, only: [:show, :update, :destroy]
+  before_action :set_motor, only: [:index, :update]
 
   # GET /motors
   def index
-    @motors = Motor.all
-
-    render json: @motors
+    render json: @motor
   end
 
   # GET /motors/1
@@ -42,7 +40,7 @@ class MotorsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_motor
-    @motor = Motor.first
+    @motor = Motor.last
   end
 
   # Only allow a trusted parameter "white list" through.
