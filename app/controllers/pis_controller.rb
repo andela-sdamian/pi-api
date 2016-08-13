@@ -9,7 +9,7 @@ class PisController < ApplicationController
       motor: set_motor
     }
 
-    render json: data
+    render json: data, status: 201
   end
 
   private
