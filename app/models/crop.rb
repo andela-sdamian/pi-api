@@ -1,3 +1,3 @@
 class Crop < ApplicationRecord
-    has_one :setting
+  has_one :setting
 end

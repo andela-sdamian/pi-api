@@ -1,17 +1,17 @@
 Rails.application.routes.draw do
-  get '/pump', to: "pumps#index"
-  put '/pump', to: "pumps#update"
+  get '/pump', to: 'pumps#index'
+  put '/pump', to: 'pumps#update'
 
-  get '/fan', to: "fans#index"
-  put '/fan', to: "fans#update"
+  get '/fan', to: 'fans#index'
+  put '/fan', to: 'fans#update'
 
-  get '/heat', to: "heats#index"
-  put '/heat', to: "heats#update"
+  get '/heat', to: 'heats#index'
+  put '/heat', to: 'heats#update'
 
-  get '/motor', to: "motors#index"
-  put '/motor', to: "motors#update"
+  get '/motor', to: 'motors#index'
+  put '/motor', to: 'motors#update'
 
-  post '/readings', to: "pis#create"
+  post '/readings', to: 'pis#create'
 
   resources :crops, except: [:destroy]
 
@@ -25,5 +25,5 @@ Rails.application.routes.draw do
 
   resources :lights, only: [:index, :create]
 
-  match "*path", to: "application#preflight", via: :options
+  match '*path', to: 'application#preflight', via: :options
 end

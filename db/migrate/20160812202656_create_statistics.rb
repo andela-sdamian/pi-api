@@ -4,12 +4,11 @@ class CreateStatistics < ActiveRecord::Migration[5.0]
       t.float :temperature
       t.float :humidity
       t.float :lux
-      t.integer :box_id 
+      t.integer :box_id
 
       t.timestamps
-
     end
 
-      add_index :statistics, :box_id 
+    add_index :statistics, :box_id
   end
 end

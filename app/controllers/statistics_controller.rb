@@ -3,11 +3,11 @@ class StatisticsController < ApplicationController
 
   # GET /statistics
   def index
-     if params[:last] 
-        @statistics = Statistic.last 
-     else 
-        @statistics = Statistic.all
-     end 
+    @statistics = if params[:last]
+                    Statistic.last
+                  else
+                    Statistic.all
+                  end
 
     render json: @statistics
   end
@@ -43,13 +43,14 @@ class StatisticsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_statistic
-      @statistic = Statistic.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def statistic_params
-      params.permit(:temeprature, :humidity, :lux)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_statistic
+    @statistic = Statistic.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def statistic_params
+    params.permit(:temeprature, :humidity, :lux)
+  end
 end

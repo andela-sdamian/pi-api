@@ -1,7 +1,7 @@
 class Setting < ApplicationRecord
-    serialize :lux
-    serialize :temp 
-    serialize :humidity 
+  serialize :lux
+  serialize :temp
+  serialize :humidity
 
-    belongs_to :crop 
+  belongs_to :crop
 end

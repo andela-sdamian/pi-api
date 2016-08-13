@@ -4,11 +4,11 @@ class CreateSettings < ActiveRecord::Migration[5.0]
       t.text :lux
       t.text :temp
       t.text :humidity
-      t.integer :crop_id 
+      t.integer :crop_id
 
       t.timestamps
     end
 
-    add_index :settings, :crop_id 
+    add_index :settings, :crop_id
   end
 end

@@ -1,11 +1,11 @@
 module MaximumRecord
   extend ActiveSupport::Concern
 
-  included do 
-      before_save :check_no_of_records
+  included do
+    before_save :check_no_of_records
 
-      default_scope { order('created_at DESC') } 
-  end  
+    default_scope { order('created_at DESC') }
+  end
 
   private
 
