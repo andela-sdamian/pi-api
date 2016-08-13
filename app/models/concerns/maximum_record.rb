@@ -10,6 +10,6 @@ module MaximumRecord
   private
 
   def check_no_of_records
-    Temperature.first.destroy if Temperature.all.size > 99
+    self.class.first.destroy if self.class.count > 99
   end
 end
