@@ -10,73 +10,75 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_160_813_012_909) do
-  create_table 'crops', force: :cascade do |t|
-    t.string   'name'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+ActiveRecord::Schema.define(version: 20160813012909) do
+
+  create_table "crops", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'fans', force: :cascade do |t|
-    t.boolean  'on',         default: false
-    t.datetime 'created_at',                 null: false
-    t.datetime 'updated_at',                 null: false
+  create_table "fans", force: :cascade do |t|
+    t.boolean  "on",         default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  create_table 'heats', force: :cascade do |t|
-    t.boolean  'on', default: false
-    t.datetime 'created_at',                 null: false
-    t.datetime 'updated_at',                 null: false
+  create_table "heats", force: :cascade do |t|
+    t.boolean  "on",         default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  create_table 'humidities', force: :cascade do |t|
-    t.float    'reading'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "humidities", force: :cascade do |t|
+    t.float    "reading"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table 'lights', force: :cascade do |t|
-    t.boolean  'on'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.string   'reading'
+  create_table "lights", force: :cascade do |t|
+    t.boolean  "on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "reading"
   end
 
-  create_table 'motors', force: :cascade do |t|
-    t.boolean  'running', default: false
-    t.datetime 'created_at',                 null: false
-    t.datetime 'updated_at',                 null: false
+  create_table "motors", force: :cascade do |t|
+    t.boolean  "running",    default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  create_table 'pumps', force: :cascade do |t|
-    t.boolean  'on', default: false
-    t.datetime 'created_at',                 null: false
-    t.datetime 'updated_at',                 null: false
+  create_table "pumps", force: :cascade do |t|
+    t.boolean  "on",         default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
-  create_table 'settings', force: :cascade do |t|
-    t.text     'lux'
-    t.text     'temp'
-    t.text     'humidity'
-    t.integer  'crop_id'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['crop_id'], name: 'index_settings_on_crop_id'
+  create_table "settings", force: :cascade do |t|
+    t.text     "lux"
+    t.text     "temp"
+    t.text     "humidity"
+    t.integer  "crop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["crop_id"], name: "index_settings_on_crop_id"
   end
 
-  create_table 'statistics', force: :cascade do |t|
-    t.float    'temperature'
-    t.float    'humidity'
-    t.float    'lux'
-    t.integer  'box_id'
-    t.datetime 'created_at',  null: false
-    t.datetime 'updated_at',  null: false
-    t.index ['box_id'], name: 'index_statistics_on_box_id'
+  create_table "statistics", force: :cascade do |t|
+    t.float    "temperature"
+    t.float    "humidity"
+    t.float    "lux"
+    t.integer  "box_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["box_id"], name: "index_statistics_on_box_id"
   end
 
-  create_table 'temperatures', force: :cascade do |t|
-    t.float    'reading'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
+  create_table "temperatures", force: :cascade do |t|
+    t.float    "reading"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
+
 end
