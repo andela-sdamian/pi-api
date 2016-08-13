@@ -16,6 +16,11 @@ class PisController < ApplicationController
 
   def save_temperature
     Temperature.create(reading: params[:temperature])
+    turn_fan_on if params[temperature] > Setting.last.temp[:max]
+  end
+
+  def turn_fan_on
+    Fan.update_attribues(on: true)
   end
 
   def save_humidity
