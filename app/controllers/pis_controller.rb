@@ -9,6 +9,7 @@ class PisController < ApplicationController
       motor: set_motor
     }
     Statistic.create({temperature: params[:temperature], humidity: params[:humidity], lux: params[:light]})
+    
     render json: data, status: 201
   end
 
